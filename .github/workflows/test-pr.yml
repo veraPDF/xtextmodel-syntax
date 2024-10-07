@@ -1,6 +1,7 @@
 name: PR QA
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -12,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java-version: [11, 17]
+        java-version: [11, 17, 21]
 
     steps:
       - uses: actions/checkout@v4
